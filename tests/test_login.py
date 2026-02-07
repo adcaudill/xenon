@@ -1,4 +1,5 @@
 import pytest
+
 from xenon.app import app
 
 
@@ -26,7 +27,7 @@ def test_login_post_invalid_user(client):
 
 def test_login_post_valid_admin(client):
     response = client.post(
-        "/login", data={"username": "admin@cheksuite-demo.com", "password": "admin"}
+        "/login", data={"username": "admin@example.com", "password": "admin"}
     )
     assert response.status_code == 302
     assert response.headers["Location"].endswith("/")
@@ -35,7 +36,7 @@ def test_login_post_valid_admin(client):
 
 def test_login_post_valid_test(client):
     response = client.post(
-        "/login", data={"username": "test@cheksuite-demo.com", "password": "test"}
+        "/login", data={"username": "test@example.com", "password": "test"}
     )
     assert response.status_code == 302
     assert response.headers["Location"].endswith("/")
@@ -44,7 +45,7 @@ def test_login_post_valid_test(client):
 
 def test_login_post_valid_user_wrong_password(client):
     response = client.post(
-        "/login", data={"username": "admin@cheksuite-demo.com", "password": "wrong"}
+        "/login", data={"username": "admin@example.com", "password": "wrong"}
     )
     assert response.status_code == 401
     assert b"Login Failed" in response.data

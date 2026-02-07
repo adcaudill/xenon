@@ -66,7 +66,7 @@ def set_demo_cookies(response):
     response.set_cookie(
         "domain_cookie",
         "domain_value",
-        domain="xenon.cheksuite-demo.com",
+        domain="xenon.example.com",
         httponly=True,
         secure=True,
         samesite="Lax",

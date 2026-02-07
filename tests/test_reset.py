@@ -1,4 +1,5 @@
 import pytest
+
 from xenon.app import app
 
 
@@ -26,7 +27,7 @@ def test_reset_post_invalid_user(client):
 
 
 def test_reset_post_valid_admin(client):
-    response = client.post("/reset", data={"username": "admin@cheksuite-demo.com"})
+    response = client.post("/reset", data={"username": "admin@example.com"})
     assert response.status_code == 200
     assert b"Reset Requested" in response.data
     assert b"alert-info" in response.data
@@ -34,7 +35,7 @@ def test_reset_post_valid_admin(client):
 
 
 def test_reset_post_valid_test(client):
-    response = client.post("/reset", data={"username": "test@cheksuite-demo.com"})
+    response = client.post("/reset", data={"username": "test@example.com"})
     assert response.status_code == 200
     assert b"Reset Requested" in response.data
     assert b"alert-info" in response.data
