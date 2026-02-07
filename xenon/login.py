@@ -39,11 +39,11 @@ def login_post():
     # Simulate timing side-channel for valid usernames
     # this simulates a delay for valid usernames to demonstrate timing attacks
     # in a real-world scenario, this would be a security risk
-    if username in ["admin@cheksuite-demo.com", "test@cheksuite-demo.com"]:
+    if username in ["admin@example.com", "test@example.com"]:
         time.sleep(0.2)
 
-    valid = (username == "admin@cheksuite-demo.com" and password == "admin") or (
-        username == "test@cheksuite-demo.com" and password == "test"
+    valid = (username == "admin@example.com" and password == "admin") or (
+        username == "test@example.com" and password == "test"
     )
     if valid:
         response = redirect(url_for("index"))
