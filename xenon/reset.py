@@ -25,7 +25,7 @@ def reset_get():
 
 def reset_post():
     username = request.form.get("username", "")
-    if username in ["admin@cheksuite-demo.com", "test@cheksuite-demo.com"]:
+    if username in ["admin@example.com", "test@example.com"]:
         time.sleep(0.2)
         info_html = """
             <div class='alert-info'>
