@@ -17,7 +17,7 @@ def test_index_status_code(client):
 def test_index_content(client):
     response = client.get("/")
     assert b"Xenon Vulnerability Simulation Service" in response.data
-    assert b"Numorian, Inc." in response.data
+    assert b"Adam Caudill" in response.data
 
 
 def test_demo_cookies_set(client):
