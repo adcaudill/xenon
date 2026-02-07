@@ -100,7 +100,7 @@ def render_template(page_title, content_html):
       {content_html}
     </div>
     <footer style=\"text-align:center; margin-top:40px; color:#888; font-size:0.95em;\">
-      Copyright &copy; <a href=\"https://numorian.com\">Numorian, Inc.</a>
+      Copyright &copy; <a href=\"https://adamcaudill.com\">Adam Caudill</a>
     </footer>
   </body>
 </html>
