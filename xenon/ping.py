@@ -49,7 +49,7 @@ def simulate_ping_command(target):
         # Split the target to get IP and injected command using all injection operators
         # Handles multi-character operators like '&&' and '||' as well as single-character ones
         injection_pattern = r"(;|\|\||&&|\||&|`|\$|\$\()"
-        parts = re.split(injection_pattern, target, 1)
+        parts = re.split(injection_pattern, target, maxsplit=1)
         ip_part = parts[0].strip()
         if len(parts) > 2:
             # parts[1] is the matched operator, parts[2] is the rest
